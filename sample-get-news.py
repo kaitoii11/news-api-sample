@@ -28,11 +28,3 @@ for a in articles:
   print(url)
   print()
   print()
-
-print (articles[0]['url'])
-from bs4 import BeautifulSoup
-response = urllib.request.urlopen(urllib.request.Request(articles[0]['url']))
-html= response.read()
-soup = BeautifulSoup(html, 'html.parser')
-body = soup.find('div', class_='article-body')
-print (body)
