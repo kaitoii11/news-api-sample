@@ -1,7 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
+import os.path
 import json
+
+if not os.path.exists('keys.config'):
+  import sys
+  sys.exit('keys.config is missing!')
 
 with open('keys.config') as f:
   key = json.load(f)
