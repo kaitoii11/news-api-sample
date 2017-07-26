@@ -32,4 +32,6 @@ response = urllib.request.urlopen(urllib.request.Request(articles[0]['url']))
 html= response.read()
 soup = BeautifulSoup(html, 'html.parser')
 body = soup.find('div', class_='article-body')
-print (body)
+from bs4.element import NavigableString
+paras = [x.contents[0] for x in body.findAllNext('p') if isinstance(x.contents[0], NavigableString)]
+print ('\n\n'.join(paras))
