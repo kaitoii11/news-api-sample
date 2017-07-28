@@ -38,7 +38,7 @@ def getNews():
 
 def getBody(url):
     from bs4 import BeautifulSoup
-    response = urllib.request.urlopen(urllib.request.Request(articles[0]['url']))
+    response = urllib.request.urlopen(url)
     html= response.read()
     soup = BeautifulSoup(html, 'html.parser')
     body = soup.find('div', class_='article-body')
